@@ -1,62 +1,56 @@
-# PaintDrops 
+# Liquid-Simulation
 
-## Overview 
+A C# project focused on simulating and visualizing the behavior of liquid drops with an emphasis on paint drop dynamics. This repository includes modular libraries for drawing, geometric shape handling, pattern generation, and simulation benchmarking, as well as comprehensive test coverage for each core area.
 
-This app will generate a drop of ink on the user click 
+## Features
 
-### Custom Feature
+- **Paint Drop Simulation**: Core module (`PaintDropSimulation`) for simulating liquid drop physics and interaction.
+- **Visualization & Drawing**: Utilities in the `DrawingLibrary` for rendering, exporting, and manipulating simulation visuals.
+- **Geometric Shape Support**: `ShapeLibrary` provides reusable code for geometric computations essential to the simulation.
+- **Pattern Generation**: `PatternGenerationLib` for algorithmic creation and management of visual patterns in simulations.
+- **Benchmarking & Performance**: `PaintDropSimulationBenchmarking` and a dedicated `Performance.md` for tracking performance metrics and comparisons.
+- **Testing**: Dedicated test directories for each module (`PaintDropSimulationTests`, `PatternGenerationLibTests`, `ShapeLibraryTests`).
 
-The user can go to a preference mode and change the color of a specific paintdrop
+## Directory Structure
 
-1. Go to preference mode by pressing Q 
-2. Choose what paint drop you want to change by pressing N, stands for Next
-3. Choose a random color by pressing R, stands for Random
-4. Apply a color to a paint drop by pressing A, stands for Apply
-5. Exit preference mode by pressing P again
-6. Enjoy your new paintdrop!
+```
+.
+├── DrawingLibrary/
+├── PaintDropSimulation/
+├── PaintDropSimulationBenchmarking/
+├── PaintDropSimulationTests/
+├── PaintDrops.sln
+├── PaintDrops/
+├── PatternGenerationLib/
+├── PatternGenerationLibTests/
+├── ShapeLibrary/
+├── ShapeLibraryTests/
+├── .gitignore
+├── .gitlab-ci.yml
+├── global.json
+├── Performance.md
+└── README.md
+```
 
-### Assignment 2, part 1
+## Technologies
 
-Features implemented:
+- **Primary Language**: C#
+- **Auxiliary**: Batchfile scripts
+- **Build/Config**: `.gitlab-ci.yml`, `global.json`, `.gitignore`
+- **Solution/Project Files**: `PaintDrops.sln`
 
-- [x] Colors class
-- [x] Colors tests
-- [x] Vectors class
-- [x] Vectors tests
+## Getting Started
 
-#### Assignment 2, part 1
-- [x] Use custom drawing library in the game
-- [x] Use custom mouse and keyboard 
-- [x] Add circle when left click
-- [x] Add rectangle when right click
-- [x] Clear shapes when middle click
-- [x] Add circle and rectangle class
-- [x] Test circle and rectangle
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DmitriyKim01/Liquid-Simulation.git
+   ```
+2. Open `PaintDrops.sln` in Visual Studio 2022 or later.
+3. Restore NuGet packages and build the solution.
+4. Run the desired simulation projects or test runner of your choice.
 
-#### Assignment 3, part 1
-- [x] Add paint drop and feature class
-- [x] Implement left click paint drop spawn
-- [x] Implement right click paint drops disapear 
-- [x] Test paint drop and surface classes
+## Performance
 
-#### Assignment 4, part 1
-- [x] Implement Patter generation
-- [x] Test Pattern generation
-- [x] Implement events and delegates
-- [x] When pressing M generate pattern
-- [x] When pressing E stop generating pattern
+Details and current benchmarks are tracked in [`Performance.md`](./Performance.md).
 
-#### Assignment 5, part 1
-- [x] Add spirograph pattern
-- [x] Optimie the program with parallel loops
-- [x] Press M to switch between the patterns
-
-### Setup
-
-1. Install Visual Studio 2022 Community version
-2. Clone the project from gitlab
-3. Double click on PaintDrop.sln
-4. Choose Visual Studio as your editor
-5. Click Run button to run your build
-
-
+For questions or collaboration, visit the [project on GitHub](https://github.com/DmitriyKim01/Liquid-Simulation) or contact the repository owner.
