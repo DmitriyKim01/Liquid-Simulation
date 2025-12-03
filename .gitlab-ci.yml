@@ -1,0 +1,30 @@
+default:
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+
+build-debug:
+  stage: build
+  script:
+    - dotnet build -c Debug
+
+build-release:
+  stage: build
+  script:
+    - cd PaintDrops
+    - dotnet publish --no-self-contained -c Release -r win-x64 -o ../publish
+    - cd ..
+    - tar -cvf Game.tar -C ./publish .
+  artifacts:
+    paths:
+      - ./Game.tar
+
+Test:
+  stage: test
+  script:
+    - 'dotnet test --test-adapter-path:. --logger:"junit;LogFilePath=../artifacts/{assembly}-test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose"'
+  artifacts:
+    when: always
+    paths:
+      - ./artifacts/*test-result.xml
+    reports:
+      junit:
+        - ./artifacts/*test-result.xml
